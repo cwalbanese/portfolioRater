@@ -12,6 +12,18 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentUser: {},
+			selectedPortfolio: {}
+		};
+	}
+	updateCurrentUser = user => {
+		this.setState({
+			currentUser: user
+		});
+	};
 	render() {
 		return (
 			<div className="App">
@@ -46,7 +58,7 @@ class App extends React.Component {
 					<Switch>
 						<Route path="/create" render={() => <Create />} />
 						<Route path="/about" render={() => <About />} />
-						<Route path="/" render={() => <Home />} />
+						<Route exact path="/" render={() => <Home />} />
 					</Switch>
 				</main>
 			</div>
