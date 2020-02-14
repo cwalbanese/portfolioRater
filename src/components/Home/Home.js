@@ -7,6 +7,24 @@ import Container from "react-bootstrap/Container";
 
 function Home(props) {
 	const { ports, user } = props;
+
+	function deletePortfolio(e) {
+		console.log(e.target.id);
+		fetch(
+			`https://portfolio-rater.herokuapp.com/api/portfolios/delete/${e.target.id}`,
+			{
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json"
+				}
+			}
+		).then(response =>
+			response.json().then(json => {
+				console.log(json);
+			})
+		);
+	}
+
 	let portElems = ports.map(port => {
 		let comments = port.posts.map(comment => {
 			return <li>{comment}</li>;
@@ -19,16 +37,19 @@ function Home(props) {
 				<h3>{port.title}</h3>
 				<p>{port.description}</p>
 				<ul>{comments}</ul>
-				<a href={port.link}>Visit portfolio</a>
-				{user._id === port.userId && (
+				<Button href={port.link}>Visit portfolio</Button>
+				{true && (
 					<div>
 						<Button>Edit</Button>
-						<Button>Delete</Button>
+						<Button id={port._id} onClick={deletePortfolio}>
+							Delete
+						</Button>
 					</div>
 				)}
 			</div>
 		);
 	});
+
 	if (portElems) {
 		return <Container className="Home">{portElems}</Container>;
 	} else {
