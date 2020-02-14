@@ -1,5 +1,10 @@
 import React from "react";
 import "./App.css";
+import { Link, Route, Switch } from "react-router-dom";
+
+import Create from "./components/Create/Create";
+import About from "./components/About/About";
+import Home from "./components/Home/Home";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
