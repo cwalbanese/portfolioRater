@@ -16,7 +16,8 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			currentUser: {},
-			selectedPortfolio: {}
+			selectedPortfolio: {},
+			portfolios: []
 		};
 	}
 	updateCurrentUser = user => {
@@ -24,6 +25,13 @@ class App extends React.Component {
 			currentUser: user
 		});
 	};
+	componentDidMount() {
+		//fetch all portfolios to apss to Home
+		fetch("https://portfolio-rater.herokuapp.com/api/portfolios")
+			.then(response => response.json())
+			.then(data => this.setState({ portfolios: data }))
+			.catch(console.error);
+	}
 	render() {
 		return (
 			<div className="App">
@@ -58,7 +66,16 @@ class App extends React.Component {
 					<Switch>
 						<Route path="/create" render={() => <Create />} />
 						<Route path="/about" render={() => <About />} />
-						<Route exact path="/" render={() => <Home />} />
+						<Route
+							exact
+							path="/"
+							render={() => (
+								<Home
+									ports={this.state.portfolios}
+									user={this.state.currentUser}
+								/>
+							)}
+						/>
 					</Switch>
 				</main>
 			</div>

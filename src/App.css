@@ -1,7 +1,12 @@
+body {
+	background-color: black;
+	color: white;
+}
 nav {
-	margin: 5px;
 	padding: 5px;
+	margin-bottom: 5px;
 	border: solid 2px black;
+	background-color: gray;
 }
 .aboutLink {
 	color: white;
@@ -11,4 +16,7 @@ nav {
 }
 .homeLink {
 	color: white;
+}
+img {
+	max-width: 30rem;
 }
