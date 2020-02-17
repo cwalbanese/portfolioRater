@@ -5,6 +5,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Create from "./components/Create/Create";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
+import Update from "./components/Update/Update";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -66,6 +67,7 @@ class App extends React.Component {
 					<Switch>
 						<Route path="/create" render={() => <Create />} />
 						<Route path="/about" render={() => <About />} />
+						<Route path="/update:id" render={() => <Update />} />
 						<Route
 							exact
 							path="/"
