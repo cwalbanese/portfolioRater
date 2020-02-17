@@ -67,7 +67,10 @@ class App extends React.Component {
 					<Switch>
 						<Route path="/create" render={() => <Create />} />
 						<Route path="/about" render={() => <About />} />
-						<Route path="/update:id" render={() => <Update />} />
+						<Route
+							path="/update/:id"
+							render={props => <Update match={props.match} />}
+						/>
 						<Route
 							exact
 							path="/"

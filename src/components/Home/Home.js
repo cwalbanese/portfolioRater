@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Route, Switch } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 // import Col from "react-bootstrap/Col";
@@ -40,9 +41,9 @@ function Home(props) {
 				<Button href={port.link}>Visit portfolio</Button>
 				{true && (
 					<div>
-						<Button id={port._id} to={`update/${port._id}`}>
-							Edit
-						</Button>
+						<Link to={"/update/" + port._id}>
+							<Button id={port._id}>Edit</Button>
+						</Link>
 						<Button id={port._id} onClick={deletePortfolio}>
 							Delete
 						</Button>
