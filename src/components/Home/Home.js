@@ -40,7 +40,9 @@ function Home(props) {
 				<Button href={port.link}>Visit portfolio</Button>
 				{true && (
 					<div>
-						<Button>Edit</Button>
+						<Button id={port._id} to={`update/${port._id}`}>
+							Edit
+						</Button>
 						<Button id={port._id} onClick={deletePortfolio}>
 							Delete
 						</Button>
