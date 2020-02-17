@@ -3,6 +3,8 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function Create() {
 	function postNewPortfolio(e) {
@@ -29,36 +31,35 @@ function Create() {
 
 	return (
 		<div className="Create">
-			<Container>
-				<form onSubmit={postNewPortfolio}>
-					<Row>
-						<Col>
-							<label htmlFor="name">User name: </label>
-							<br />
-							<input type="text" id="name" name="name" />
-							<br />
-							<label htmlFor="imageUrl">Image URL: </label>
-							<br />
-							<input type="text" id="imageUrl" name="imageUrl" />
-						</Col>
-						<Col>
-							<label htmlFor="title">Title: </label>
-							<br />
-							<input type="text" id="title" name="title" />
-							<br />
-							<label htmlFor="link">Portfolio link: </label>
-							<br />
-							<input type="text" id="link" name="link" />
-						</Col>
-						<Col>
-							<label htmlFor="description">Description: </label>
-							<br />
-							<input type="text" id="description" name="description" />
-							<br />
-							<input type="submit" />
-						</Col>
-					</Row>
-				</form>
+			<Container fluid="true">
+				<Form onSubmit={postNewPortfolio}>
+					<Form.Row>
+						<Form.Group>
+							<Form.Label htmlFor="name">User name: </Form.Label>
+							<Form.Control type="text" id="name" name="name" />
+						</Form.Group>
+						<Form.Group>
+							<Form.Label htmlFor="imageUrl">Image URL: </Form.Label>
+							<Form.Control type="text" id="imageUrl" name="imageUrl" />
+						</Form.Group>
+
+						<Form.Group>
+							<Form.Label htmlFor="title">Title: </Form.Label>
+							<Form.Control type="text" id="title" name="title" />
+						</Form.Group>
+					</Form.Row>
+					<Form.Row>
+						<Form.Group>
+							<Form.Label htmlFor="link">Portfolio link: </Form.Label>
+							<Form.Control type="text" id="link" name="link" />
+						</Form.Group>
+						<Form.Group>
+							<Form.Label htmlFor="description">Description: </Form.Label>
+							<Form.Control type="text" id="description" name="description" />
+							<Button type="submit">Submit</Button>
+						</Form.Group>
+					</Form.Row>
+				</Form>
 			</Container>
 		</div>
 	);
