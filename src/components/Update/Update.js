@@ -1,8 +1,10 @@
 import React from "react";
 
 import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 class Update extends React.Component {
 	constructor(props) {
@@ -35,52 +37,76 @@ class Update extends React.Component {
 	componentDidMount() {
 		fetch(
 			"https://portfolio-rater.herokuapp.com/api/portfolios/" +
-				this.props.match.params._id,
-			{
-				method: "GET",
-				headers: {
-					"Content-Type": "application/json"
-				}
-			}
+				this.props.match.params.id
 		)
 			.then(response => response.json())
 			.then(data => this.setState({ portfolio: data }))
 			.catch(console.error);
 	}
 	render() {
-		console.log(this.props.match.params);
+		// console.log(this.state.portfolio);
+		if (this.state.portfolio) {
+			var { name, title, description, link, imageUrl } = this.state.portfolio;
+		}
 		return (
 			<div className="Update">
 				<Container>
-					<form onSubmit={this.updatePortfolio}>
-						<Row>
+					<Form onSubmit={this.updatePortfolio}>
+						<Form.Row>
 							<Col>
-								<label htmlFor="name">User name: </label>
-								<br />
-								<input type="text" id="name" name="name" />
-								<br />
-								<label htmlFor="imageUrl">Image URL: </label>
-								<br />
-								<input type="text" id="imageUrl" name="imageUrl" />
+								<Form.Group>
+									<Form.Label htmlFor="name">User name: </Form.Label>
+									<Form.Control
+										type="text"
+										id="name"
+										name="name"
+										placeholder={name}
+									/>
+								</Form.Group>
+								<Form.Group>
+									<Form.Label htmlFor="imageUrl">Image URL: </Form.Label>
+									<Form.Control
+										type="text"
+										id="imageUrl"
+										name="imageUrl"
+										placeholder={imageUrl}
+									/>
+								</Form.Group>
 							</Col>
 							<Col>
-								<label htmlFor="title">Title: </label>
-								<br />
-								<input type="text" id="title" name="title" />
-								<br />
-								<label htmlFor="link">Portfolio link: </label>
-								<br />
-								<input type="text" id="link" name="link" />
+								<Form.Group>
+									<Form.Label htmlFor="title">Title: </Form.Label>
+									<Form.Control
+										type="text"
+										id="title"
+										name="title"
+										placeholder={title}
+									/>
+								</Form.Group>
+								<Form.Group>
+									<Form.Label htmlFor="link">Portfolio link: </Form.Label>
+									<Form.Control
+										type="text"
+										id="link"
+										name="link"
+										placeholder={link}
+									/>
+								</Form.Group>
 							</Col>
 							<Col>
-								<label htmlFor="description">Description: </label>
-								<br />
-								<input type="text" id="description" name="description" />
-								<br />
-								<input type="submit" />
+								<Form.Group>
+									<Form.Label htmlFor="description">Description: </Form.Label>
+									<Form.Control
+										type="text"
+										id="description"
+										name="description"
+										placeholder={description}
+									/>
+									<Button type="submit">Submit</Button>
+								</Form.Group>
 							</Col>
-						</Row>
-					</form>
+						</Form.Row>
+					</Form>
 				</Container>
 			</div>
 		);

@@ -34,20 +34,27 @@ function Create() {
 					<Row>
 						<Col>
 							<label htmlFor="name">User name: </label>
+							<br />
 							<input type="text" id="name" name="name" />
+							<br />
 							<label htmlFor="imageUrl">Image URL: </label>
+							<br />
 							<input type="text" id="imageUrl" name="imageUrl" />
 						</Col>
 						<Col>
 							<label htmlFor="title">Title: </label>
 							<br />
 							<input type="text" id="title" name="title" />
+							<br />
 							<label htmlFor="link">Portfolio link: </label>
+							<br />
 							<input type="text" id="link" name="link" />
 						</Col>
 						<Col>
 							<label htmlFor="description">Description: </label>
+							<br />
 							<input type="text" id="description" name="description" />
+							<br />
 							<input type="submit" />
 						</Col>
 					</Row>

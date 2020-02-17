@@ -28,7 +28,7 @@ function Home(props) {
 
 	let portElems = ports.map(port => {
 		let comments = port.posts.map(comment => {
-			return <li>{comment}</li>;
+			return <li key={comment}>{comment}</li>;
 		});
 		return (
 			<div key={port._id}>
