@@ -1,17 +1,17 @@
-import React from "react";
-import "./App.css";
-import { Link, Route, Switch } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import { Link, Route, Switch } from 'react-router-dom';
 
-import Create from "./components/Create/Create";
-import About from "./components/About/About";
-import Home from "./components/Home/Home";
-import Update from "./components/Update/Update";
-import Portfolio from "./components/Portfolio/Portfolio";
+import Create from './components/Create/Create';
+import About from './components/About/About';
+import Home from './components/Home/Home';
+import Update from './components/Update/Update';
+import Portfolio from './components/Portfolio/Portfolio';
 
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 class App extends React.Component {
 	constructor(props) {
@@ -29,7 +29,7 @@ class App extends React.Component {
 	};
 	componentDidMount() {
 		//fetch all portfolios to apss to Home
-		fetch("https://portfolio-rater.herokuapp.com/api/portfolios")
+		fetch('https://portfolio-rater.herokuapp.com/api/portfolios')
 			.then(response => response.json())
 			.then(data => this.setState({ portfolios: data }))
 			.catch(console.error);

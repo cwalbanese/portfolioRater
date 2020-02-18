@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 
 class Portfolio extends React.Component {
 	constructor(props) {
@@ -15,9 +15,9 @@ class Portfolio extends React.Component {
 		fetch(
 			`https://portfolio-rater.herokuapp.com/api/portfolios/delete/${e.target.id}`,
 			{
-				method: "DELETE",
+				method: 'DELETE',
 				headers: {
-					"Content-Type": "application/json"
+					'Content-Type': 'application/json'
 				}
 			}
 		).then(response =>
@@ -28,7 +28,7 @@ class Portfolio extends React.Component {
 	};
 	componentDidMount() {
 		fetch(
-			"https://portfolio-rater.herokuapp.com/api/portfolios/" +
+			'https://portfolio-rater.herokuapp.com/api/portfolios/' +
 				this.props.match.params.id
 		)
 			.then(response => response.json())
@@ -44,7 +44,7 @@ class Portfolio extends React.Component {
 			});
 			return (
 				<div key={port._id}>
-					<Link to={"/portfolio/" + port._id}>
+					<Link to={'/portfolio/' + port._id}>
 						<img src={port.imageUrl} />
 					</Link>
 					<br />
@@ -55,7 +55,7 @@ class Portfolio extends React.Component {
 					<Button href={port.link}>Visit portfolio</Button>
 					{true && (
 						<div>
-							<Link to={"/update/" + port._id}>
+							<Link to={'/update/' + port._id}>
 								<Button id={port._id}>Edit</Button>
 							</Link>
 							<Button id={port._id} onClick={this.deletePortfolio}>
