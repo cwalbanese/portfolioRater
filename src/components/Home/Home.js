@@ -41,22 +41,12 @@ function Home(props) {
 				<p>{port.description}</p>
 				<ul>{comments}</ul>
 				<Button href={port.link}>Visit portfolio</Button>
-				{true && (
-					<div>
-						<Link to={'/update/' + port._id}>
-							<Button id={port._id}>Edit</Button>
-						</Link>
-						<Button id={port._id} onClick={deletePortfolio}>
-							Delete
-						</Button>
-					</div>
-				)}
 			</div>
 		);
 	});
 
 	if (portElems) {
-		return <Container className="Home">{portElems}</Container>;
+		return <div className="main">{portElems}</div>;
 	} else {
 		return <h1>No portfolios found?</h1>;
 	}
