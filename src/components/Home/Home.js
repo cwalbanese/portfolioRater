@@ -32,7 +32,9 @@ function Home(props) {
     });
     return (
       <div key={port._id} className="portfolio">
-        <img src={port.imageUrl} alt="" />
+        <Link to={'/portfolio/' + port._id}>
+          <img src={port.imageUrl} alt={port.title} />
+        </Link>
         <br />
         <h3>{port.name}</h3>
         <h4>{port.title}</h4>

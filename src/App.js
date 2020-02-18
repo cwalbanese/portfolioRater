@@ -65,6 +65,10 @@ class App extends React.Component {
               render={props => <Update match={props.match} />}
             />
             <Route
+              path="/portfolio/:id"
+              render={props => <Portfolio match={props.match} />}
+            />
+            <Route
               exact
               path="/"
               render={() => (
