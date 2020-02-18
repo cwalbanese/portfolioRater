@@ -6,6 +6,7 @@ import Create from "./components/Create/Create";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Update from "./components/Update/Update";
+import Portfolio from "./components/Portfolio/Portfolio";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -34,6 +35,7 @@ class App extends React.Component {
 			.catch(console.error);
 	}
 	render() {
+		console.log(this.props);
 		return (
 			<div className="App">
 				<nav>
@@ -67,6 +69,10 @@ class App extends React.Component {
 					<Switch>
 						<Route path="/create" render={() => <Create />} />
 						<Route path="/about" render={() => <About />} />
+						<Route
+							path="/portfolio/:id"
+							render={props => <Portfolio match={props.match} />}
+						/>
 						<Route
 							path="/update/:id"
 							render={props => <Update match={props.match} />}
