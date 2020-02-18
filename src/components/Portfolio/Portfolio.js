@@ -54,9 +54,7 @@ class Portfolio extends React.Component {
           <p>{port.description}</p>
           <ul>{comments}</ul>
 
-          <Button className="btn btn-secondary" href={port.link}>
-            Visit portfolio
-          </Button>
+          <Button href={port.link}>Visit portfolio</Button>
 
           {true && (
             <div>
