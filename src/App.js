@@ -43,13 +43,11 @@ class App extends React.Component {
 							Home
 						</Link>
 					</Button>
-
 					<Button className="btn btn-secondary">
 						<Link className="createLink" to="/create">
 							Create
 						</Link>
 					</Button>
-
 					<Button className="btn btn-secondary">
 						<Link className="aboutLink" to="/about">
 							About
@@ -61,12 +59,12 @@ class App extends React.Component {
 						<Route path="/create" render={() => <Create />} />
 						<Route path="/about" render={() => <About />} />
 						<Route
-							path="/portfolio/:id"
-							render={props => <Portfolio match={props.match} />}
-						/>
-						<Route
 							path="/update/:id"
 							render={props => <Update match={props.match} />}
+						/>
+						<Route
+							path="/portfolio/:id"
+							render={props => <Portfolio match={props.match} />}
 						/>
 						<Route
 							exact
