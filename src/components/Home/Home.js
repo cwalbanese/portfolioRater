@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import './Home.css';
 
 import Button from 'react-bootstrap/Button';
 // import Col from "react-bootstrap/Col";
@@ -31,16 +32,26 @@ function Home(props) {
 			return <li key={comment}>{comment}</li>;
 		});
 		return (
-			<div key={port._id}>
+			<div key={port._id} className="portfolio">
 				<Link to={'/portfolio/' + port._id}>
 					<img src={port.imageUrl} alt={port.title} />
 				</Link>
 				<br />
-				<h4>{port.name}</h4>
-				<h3>{port.title}</h3>
+				<h3>{port.name}</h3>
+				<h4>{port.title}</h4>
 				<p>{port.description}</p>
 				<ul>{comments}</ul>
 				<Button href={port.link}>Visit portfolio</Button>
+				{true && (
+					<div>
+						<Link to={'/update/' + port._id}>
+							<Button id={port._id}>Edit</Button>
+						</Link>
+						<Button id={port._id} onClick={deletePortfolio}>
+							Delete
+						</Button>
+					</div>
+				)}
 			</div>
 		);
 	});
