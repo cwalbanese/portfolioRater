@@ -14,11 +14,15 @@ nav {
   color: white;
 }
 
+nav img {
+  width: 50px;
+}
+
 nav h2 {
   font-family: 'Russo One', sans-serif;
   font-size: 36px;
   margin-top: 10px;
-  margin-left: -40px;
+  margin-left: -25px;
 }
 
 .aboutLink {
@@ -51,4 +55,14 @@ footer {
 footer p {
   text-align: center;
   padding: 25px 0px 0px 0px;
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: block;
+  }
+
+  nav h2 {
+    margin-left: 0px;
+  }
 }

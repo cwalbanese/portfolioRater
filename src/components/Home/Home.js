@@ -40,9 +40,9 @@ function Home(props) {
         <h4>{port.title}</h4>
         <p>{port.description}</p>
         <ul>{comments}</ul>
-        <Button className="btn btn-secondary" href={port.link}>
-          Visit portfolio
-        </Button>
+        <a target="_blank" href={port.link}>
+          <Button className="btn btn-secondary">Visit portfolio</Button>
+        </a>
       </div>
     );
   });
