@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import './Home.css';
-
 import Button from 'react-bootstrap/Button';
 // import Col from "react-bootstrap/Col";
 // import Row from "react-bootstrap/Row";
