@@ -38,31 +38,24 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<nav>
-					<Container>
-						<Row>
-							<Col>
-								<Button className="btn btn-primary">
-									<Link className="homeLink" to="/">
-										Home
-									</Link>
-								</Button>
-							</Col>
-							<Col>
-								<Button className="btn btn-secondary">
-									<Link className="createLink" to="/create">
-										Create
-									</Link>
-								</Button>
-							</Col>
-							<Col>
-								<Button className="btn btn-secondary">
-									<Link className="aboutLink" to="/about">
-										About
-									</Link>
-								</Button>
-							</Col>
-						</Row>
-					</Container>
+					<h2>Portfolio Rater</h2>
+					<Button className="btn btn-primary">
+						<Link className="homeLink" to="/">
+							Home
+						</Link>
+					</Button>
+
+					<Button className="btn btn-secondary">
+						<Link className="createLink" to="/create">
+							Create
+						</Link>
+					</Button>
+
+					<Button className="btn btn-secondary">
+						<Link className="aboutLink" to="/about">
+							About
+						</Link>
+					</Button>
 				</nav>
 				<main>
 					<Switch>
@@ -88,6 +81,9 @@ class App extends React.Component {
 						/>
 					</Switch>
 				</main>
+				<footer>
+					<p>Made by Chris Albanese, Skyler Bond, and Jarod McGill</p>
+				</footer>
 			</div>
 		);
 	}
