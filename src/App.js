@@ -34,7 +34,6 @@ class App extends React.Component {
 			.catch(console.error);
 	}
 	render() {
-		console.log(this.props);
 		return (
 			<div className="App">
 				<nav>
