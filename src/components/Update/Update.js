@@ -16,15 +16,16 @@ class Update extends React.Component {
 	updatePortfolio(e) {
 		e.preventDefault();
 		const { name, imageUrl, title, link, description } = e.target;
+		const { portfolio } = this.state;
 		let data = {
-			name: name.value || null,
-			imageUrl: imageUrl.value || null,
-			title: title.value || null,
-			link: link.value || null,
-			description: description.value || null
+			name: name.value || portfolio.name,
+			imageUrl: imageUrl.value || portfolio.imageUrl,
+			title: title.value || portfolio.title,
+			link: link.value || portfolio.link,
+			description: description.value || portfolio.description
 		};
 		fetch("https://portfolio-rater.herokuapp.com/api/portfolios/", {
-			method: "POST",
+			method: "PUT",
 			headers: {
 				"Content-Type": "application/json"
 			},
