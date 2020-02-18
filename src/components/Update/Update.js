@@ -13,28 +13,35 @@ class Update extends React.Component {
 			portfolio: null
 		};
 	}
-	updatePortfolio(e) {
+	updatePortfolio = e => {
 		e.preventDefault();
-		const { name, imageUrl, title, link, description } = e.target;
-		const { portfolio } = this.state;
-		let data = {
-			name: name.value || portfolio.name,
-			imageUrl: imageUrl.value || portfolio.imageUrl,
-			title: title.value || portfolio.title,
-			link: link.value || portfolio.link,
-			description: description.value || portfolio.description
-		};
-		fetch("https://portfolio-rater.herokuapp.com/api/portfolios/", {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			mode: "cors",
-			body: JSON.stringify(data)
-		}).then(function(response) {
-			console.log(response.json());
-		});
-	}
+		if (this.state.portfolio) {
+			const { name, imageUrl, title, link, description } = e.target;
+			const { portfolio } = this.state;
+			let data = {
+				name: name.value || portfolio.name,
+				imageUrl: imageUrl.value || portfolio.imageUrl,
+				title: title.value || portfolio.title,
+				link: link.value || portfolio.link,
+				description: description.value || portfolio.description
+			};
+			console.log(this.state.portfolio);
+			fetch(
+				"https://portfolio-rater.herokuapp.com/api/portfolios/update/" +
+					portfolio._id,
+				{
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					mode: "cors",
+					body: JSON.stringify(data)
+				}
+			).then(function(response) {
+				console.log(response.json());
+			});
+		}
+	};
 	componentDidMount() {
 		fetch(
 			"https://portfolio-rater.herokuapp.com/api/portfolios/" +
