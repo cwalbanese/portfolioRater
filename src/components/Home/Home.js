@@ -32,23 +32,15 @@ function Home(props) {
 		});
 		return (
 			<div key={port._id}>
-				<img src={port.imageUrl} />
+				<Link to={"/portfolio/" + port._id}>
+					<img src={port.imageUrl} />
+				</Link>
 				<br />
 				<h4>{port.name}</h4>
 				<h3>{port.title}</h3>
 				<p>{port.description}</p>
 				<ul>{comments}</ul>
 				<Button href={port.link}>Visit portfolio</Button>
-				{true && (
-					<div>
-						<Link to={"/update/" + port._id}>
-							<Button id={port._id}>Edit</Button>
-						</Link>
-						<Button id={port._id} onClick={deletePortfolio}>
-							Delete
-						</Button>
-					</div>
-				)}
 			</div>
 		);
 	});
