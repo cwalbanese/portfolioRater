@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
 // import Col from "react-bootstrap/Col";
 // import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
 
 function Home(props) {
 	const { ports, user } = props;
@@ -14,9 +14,9 @@ function Home(props) {
 		fetch(
 			`https://portfolio-rater.herokuapp.com/api/portfolios/delete/${e.target.id}`,
 			{
-				method: "DELETE",
+				method: 'DELETE',
 				headers: {
-					"Content-Type": "application/json"
+					'Content-Type': 'application/json'
 				}
 			}
 		).then(response =>
@@ -32,8 +32,8 @@ function Home(props) {
 		});
 		return (
 			<div key={port._id}>
-				<Link to={"/portfolio/" + port._id}>
-					<img src={port.imageUrl} />
+				<Link to={'/portfolio/' + port._id}>
+					<img src={port.imageUrl} alt={port.title} />
 				</Link>
 				<br />
 				<h4>{port.name}</h4>
