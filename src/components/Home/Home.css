@@ -1,17 +1,17 @@
 .main {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .portfolio {
-	margin: 25px;
-	border: solid black 5px;
-	background-color: #5a6268;
+  margin: 25px;
+  border: solid black 5px;
+  background-color: white;
 }
 
 @media (max-width: 600px) {
-	.main {
-		display: grid;
-		grid-template-columns: 1fr;
-	}
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
