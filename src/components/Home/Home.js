@@ -36,13 +36,18 @@ function Home(props) {
           <img src={port.imageUrl} alt={port.title} />
         </Link>
         <br />
+        <div className="content">
         <h3>{port.name}</h3>
         <h4>{port.title}</h4>
         <p>{port.description}</p>
-        <ul>{comments}</ul>
+          <ul>{comments}</ul>
+          </div>
         <a target="_blank" href={port.link}>
           <Button className="btn btn-secondary">Visit portfolio</Button>
         </a>
+        <Button className="btn btn-success"></Button>
+        <span className="rating">{port.rating}</span>
+        <Button className="btn btn-danger"></Button>
       </div>
     );
   });

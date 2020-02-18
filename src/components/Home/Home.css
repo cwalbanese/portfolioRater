@@ -5,9 +5,17 @@
 
 .portfolio {
   margin: 25px;
-  border: solid black 5px;
+  border: solid black 8px;
   background-color: white;
+  border-radius: 10px;
 }
+
+.content {
+  padding: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
 
 @media (max-width: 600px) {
   .main {
@@ -15,3 +23,28 @@
     grid-template-columns: 1fr;
   }
 }
+
+.btn-success {
+  background: url(../../images/thumbs-up-icon.svg) no-repeat;
+  background-size: contain;
+  min-width: 38px;
+  height: 38px;
+  
+  margin: 15px;
+}
+
+.btn-danger {
+  background: url(../../images/thumbs-up-icon.svg) no-repeat;
+  background-size: contain;
+  min-width: 38px;
+  height: 38px;
+  transform: rotate(180deg);
+  margin: 15px;
+}
+
+.rating {
+  font-size: 36px;
+  margin-top: 30px;
+}
+
+
