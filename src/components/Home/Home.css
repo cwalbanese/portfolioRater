@@ -32,7 +32,7 @@
   margin: 15px;
 }
 
-.btn-danger {
+.down {
   background: url(../../images/thumbs-up-icon.svg) no-repeat;
   background-size: contain;
   min-width: 38px;

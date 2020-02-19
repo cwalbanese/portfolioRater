@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Create.css';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
@@ -32,36 +32,50 @@ function Create() {
   return (
     <div className="Create">
       <Container fluid="true">
-        <Form onSubmit={postNewPortfolio}>
-          <Form.Row>
-            <Form.Group>
-              <Form.Label htmlFor="name">User name: </Form.Label>
-              <Form.Control type="text" id="name" name="name" />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor="imageUrl">Image URL: </Form.Label>
-              <Form.Control type="text" id="imageUrl" name="imageUrl" />
-            </Form.Group>
+        <Row>
+          <Col>
+            <h2>Post your portfolio.</h2>
+          </Col>
+          <Col>
+            <div className="form">
+              <Form onSubmit={postNewPortfolio}>
+                <Form.Row>
+                  <Form.Group>
+                    <Form.Label htmlFor="name">User name: </Form.Label>
+                    <Form.Control type="text" id="name" name="name" />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label htmlFor="imageUrl">Image URL: </Form.Label>
+                    <Form.Control type="text" id="imageUrl" name="imageUrl" />
+                  </Form.Group>
 
-            <Form.Group>
-              <Form.Label htmlFor="title">Title: </Form.Label>
-              <Form.Control type="text" id="title" name="title" />
-            </Form.Group>
-          </Form.Row>
-          <Form.Row>
-            <Form.Group>
-              <Form.Label htmlFor="link">Portfolio link: </Form.Label>
-              <Form.Control type="text" id="link" name="link" />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor="description">Description: </Form.Label>
-              <Form.Control type="text" id="description" name="description" />
-              <Button className="btn btn-secondary" type="submit">
-                Submit
-              </Button>
-            </Form.Group>
-          </Form.Row>
-        </Form>
+                  <Form.Group>
+                    <Form.Label htmlFor="title">Title: </Form.Label>
+                    <Form.Control type="text" id="title" name="title" />
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group>
+                    <Form.Label htmlFor="link">Portfolio link: </Form.Label>
+                    <Form.Control type="text" id="link" name="link" />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label htmlFor="description">Description: </Form.Label>
+                    <Form.Control
+                      type="text"
+                      id="description"
+                      name="description"
+                    />
+                    <br />
+                    <Button className="btn btn-secondary" type="submit">
+                      Submit
+                    </Button>
+                  </Form.Group>
+                </Form.Row>
+              </Form>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </div>
   );

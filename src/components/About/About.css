@@ -1,4 +1,9 @@
-.About p {
-	font-size: 2em;
-	border: 3px solid gray;
+.about {
+  width: 75vw;
+  margin: 200px auto;
+  border: solid black 8px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
 }

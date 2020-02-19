@@ -48,7 +48,7 @@ function Home(props) {
           </a>
           <Button className="btn btn-success"></Button>
           <Button className="btn btn-secondary">{port.rating}</Button>
-          <Button className="btn btn-danger"></Button>
+          <Button className="btn btn-danger down"></Button>
         </div>
       </div>
     );

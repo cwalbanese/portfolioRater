@@ -12,6 +12,7 @@ nav {
   top: 0;
   width: 100%;
   color: white;
+  z-index: 1;
 }
 
 nav img {

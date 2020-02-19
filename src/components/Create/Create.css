@@ -1,0 +1,9 @@
+.form {
+  display: grid;
+  margin-top: 100px;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+h2 {
+  margin-top: 100px;
+}
