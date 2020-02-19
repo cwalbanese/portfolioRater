@@ -1,7 +1,10 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import App from "./App";
+import React from 'react';
+import { shallow } from 'enzyme';
+import App from './App';
 
-describe("things should happen", () => {
-	test("thing happens", () => {});
-});
+describe('App component', () => {
+	it('should render as expected', () => {
+		const component = shallow(<App />)
+		expect(component.contains(<h2>Portfolio Rater</h2>)).toBe(true)
+	})
+})
