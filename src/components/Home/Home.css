@@ -16,7 +16,7 @@
   margin-bottom: 50px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 725px) {
   .main {
     display: grid;
     grid-template-columns: 1fr;
