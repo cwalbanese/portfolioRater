@@ -64,7 +64,7 @@ class Home extends React.Component {
 		fetch('https://portfolio-rater.herokuapp.com/api/portfolios')
 			.then(response => response.json())
 			.then(data => this.setState({ ports: data }))
-			.then(console.log('mounting'))
+
 			.catch(console.error);
 	}
 

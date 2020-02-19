@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import './Portfolio.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import ConfirmDelete from '../ConfirmDelete/ConfirmDelete';
 
 class Portfolio extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			port: null,
-			show: false
+			show: false,
+			commentIndex: null,
+			deleteType: null
 		};
 	}
 	deletePortfolio = e => {
@@ -116,10 +120,30 @@ class Portfolio extends React.Component {
 			.then(data => this.setState({ port: data }))
 			.catch(console.error);
 	}
+	handleHide = () => {
+		this.setState({
+			show: false
+		});
+	};
+
+	handleShow = e => {
+		if (e.target.getAttribute('data-index')) {
+			this.setState({
+				deleteType: 'comment',
+				commentIndex: e.target.getAttribute('data-index')
+			});
+		} else {
+			this.setState({ deleteType: 'portfolio' });
+		}
+		this.setState({
+			show: true
+		});
+	};
 
 	render() {
+		let index;
 		if (this.state.port !== null) {
-			const { port } = this.state;
+			const { port, show } = this.state;
 			let comments = port.posts.map((comment, index) => {
 				return (
 					<Form>
@@ -128,7 +152,7 @@ class Portfolio extends React.Component {
 							<Button
 								data-id={port._id}
 								data-index={index}
-								onClick={this.deleteComment}
+								onClick={this.handleShow}
 								className="btn btn-secondary"
 							>
 								Delete
@@ -139,6 +163,17 @@ class Portfolio extends React.Component {
 			});
 			return (
 				<div key={port._id} className="portfolio">
+					<Modal show={show}>
+						<ConfirmDelete
+							id={port._id}
+							index={this.state.commentIndex}
+							handleShow={this.handleShow}
+							handleHide={this.handleHide}
+							deletePortfolio={this.deletePortfolio}
+							deleteComment={this.deleteComment}
+							type={this.state.deleteType}
+						/>
+					</Modal>
 					<img src={port.imageUrl} alt={port.title} />
 
 					<br />
@@ -186,7 +221,7 @@ class Portfolio extends React.Component {
 								</Link>
 								<Button
 									id={port._id}
-									onClick={this.deletePortfolio}
+									onClick={this.handleShow}
 									className="btn btn-secondary btn-port"
 								>
 									Delete
