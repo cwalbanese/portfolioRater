@@ -37,11 +37,11 @@ function Home(props) {
         </Link>
         <br />
         <div className="content">
-        <h3>{port.name}</h3>
-        <h4>{port.title}</h4>
-        <p>{port.description}</p>
+          <h3>{port.name}</h3>
+          <h4>{port.title}</h4>
+          <p>{port.description}</p>
           <ul>{comments}</ul>
-          </div>
+        </div>
         <a target="_blank" href={port.link}>
           <Button className="btn btn-secondary">Visit portfolio</Button>
         </a>

@@ -13,9 +13,7 @@
 .content {
   padding: 10px;
   font-family: 'Source Sans Pro', sans-serif;
-
 }
-
 
 @media (max-width: 600px) {
   .main {
@@ -29,7 +27,7 @@
   background-size: contain;
   min-width: 38px;
   height: 38px;
-  
+
   margin: 15px;
 }
 
@@ -46,5 +44,3 @@
   font-size: 36px;
   margin-top: 30px;
 }
-
-
