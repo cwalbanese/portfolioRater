@@ -1,0 +1,21 @@
+.portfolio {
+  margin: 25px;
+  border: solid black 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.content {
+  padding: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 50px;
+  margin-left: 5px;
+}
+
+.port-buttons {
+  display: flex;
+}
+
+.btn-port {
+  margin: 10px 10px 15px 0px;
+}

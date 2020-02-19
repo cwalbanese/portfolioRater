@@ -58,7 +58,7 @@ class Update extends React.Component {
     }
     return (
       <div className="Update">
-        <Container>
+        <Container fluid="true">
           <Row>
             <Col>
               <h2>Edit your portfolio.</h2>
@@ -114,6 +114,7 @@ class Update extends React.Component {
                         id="description"
                         name="description"
                         placeholder={description}
+                        className="description"
                       />
                       <br />
                       <Button type="submit" className="btn btn-secondary">

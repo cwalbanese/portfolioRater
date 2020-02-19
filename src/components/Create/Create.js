@@ -65,6 +65,7 @@ function Create() {
                       type="text"
                       id="description"
                       name="description"
+                      className="description"
                     />
                     <br />
                     <Button className="btn btn-secondary" type="submit">
