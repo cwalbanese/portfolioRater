@@ -69,6 +69,9 @@ function Home(props) {
 					<a target="_blank" rel="noopener noreferrer" href={port.link}>
 						<Button className="btn btn-secondary">Visit portfolio</Button>
 					</a>
+					<Link to={'/portfolio/' + port._id}>
+						<Button>View/Comment</Button>
+					</Link>
 					<Button
 						onClick={() => like(port._id, port.rating)}
 						className="btn btn-success"
