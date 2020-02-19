@@ -60,7 +60,30 @@ class Portfolio extends React.Component {
 		}, 125);
 	};
 
-	addComment() {}
+	addComment = event => {
+		event.preventDefault();
+		console.log(event.target.comment.value);
+		let newComments = [...this.state.port.posts];
+		newComments.push(event.target.comment.value);
+		let data = { posts: newComments };
+		fetch(
+			'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
+				this.state.port._id,
+			{
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				mode: 'cors',
+				body: JSON.stringify(data)
+			}
+		);
+		setTimeout(() => {
+			window.location.reload();
+		}, 125);
+	};
+
+	deleteComment = () => {};
 
 	componentDidMount() {
 		fetch(
