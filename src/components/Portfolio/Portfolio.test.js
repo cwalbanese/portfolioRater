@@ -12,11 +12,7 @@ describe('Portfolio', () => {
 			}
 
 		}
-		const tempPortfolio = {
-			userId: 'John Smith',
-			_id: '5e4d48a11368db000418c4d2',
-
-		}
+		
 		component = shallow(<Portfolio match={match} />);
 	});
 
