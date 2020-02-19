@@ -8,9 +8,6 @@ import Home from './components/Home/Home';
 import Update from './components/Update/Update';
 import Portfolio from './components/Portfolio/Portfolio';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 
 class App extends React.Component {
   constructor(props) {

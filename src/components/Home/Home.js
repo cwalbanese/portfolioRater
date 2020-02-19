@@ -1,10 +1,7 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import Button from 'react-bootstrap/Button';
-// import Col from "react-bootstrap/Col";
-// import Row from "react-bootstrap/Row";
-import Container from 'react-bootstrap/Container';
 
 function Home(props) {
   const { ports, user } = props;

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Portfolio.css';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -37,7 +36,6 @@ class Portfolio extends React.Component {
       .catch(console.error);
   }
   render() {
-    console.log(this.state);
     if (this.state.port !== null) {
       const { port } = this.state;
       let comments = port.posts.map(comment => {
@@ -46,7 +44,7 @@ class Portfolio extends React.Component {
       return (
         <div key={port._id}>
           <Link to={'/portfolio/' + port._id}>
-            <img src={port.imageUrl} />
+            <img src={port.imageUrl} alt={port.title} />
           </Link>
           <br />
           <h4>{port.name}</h4>

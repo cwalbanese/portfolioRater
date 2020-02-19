@@ -41,7 +41,7 @@ function Create() {
               <Form onSubmit={postNewPortfolio}>
                 <Form.Row>
                   <Form.Group>
-                    <Form.Label htmlFor="name">User name: </Form.Label>
+                    <Form.Label htmlFor="name">Name: </Form.Label>
                     <Form.Control type="text" id="name" name="name" />
                   </Form.Group>
                   <Form.Group>
