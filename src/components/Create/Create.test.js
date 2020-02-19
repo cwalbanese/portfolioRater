@@ -1,6 +1,10 @@
-import React from "react";
-import { create } from "react-test-renderer";
+import React from 'react';
+import { shallow } from 'enzyme';
+import Create from './Create';
 
-describe("things should happen", () => {
-	test("thing happens", () => {});
-});
+describe('Create component', () => {
+	it('should render as expected', () => {
+		const component = shallow(<Create />)
+		expect(component.contains(<h2>Post your portfolio.</h2>)).toBe(true)
+	})
+})

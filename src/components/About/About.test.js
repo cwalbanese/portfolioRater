@@ -1,10 +1,3 @@
-// import React from "react";
-// import { create } from "react-test-renderer";
-
-// describe("things should happen", () => {
-// 	test("thing happens", () => {});
-// });
-
 import React from 'react';
 import { shallow } from 'enzyme';
 import About from './About';
