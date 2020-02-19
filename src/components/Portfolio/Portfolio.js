@@ -8,7 +8,8 @@ class Portfolio extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			port: null
+			port: null,
+			show: false
 		};
 	}
 	deletePortfolio = e => {
@@ -84,27 +85,26 @@ class Portfolio extends React.Component {
 	};
 
 	deleteComment = e => {
-		console.log(e.target.getAttribute('data-id'));
-		// const index = e.target.getAttribute('data-index');
-		// const id = e.target.getAttribute('data-id');
-		// let newComments = this.state.port.posts;
-		// newComments.splice(index, 1);
-		// const data = { posts: newComments };
-		// fetch(
-		//   'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
-		//     this.state.port._id,
-		//   {
-		//     method: 'PUT',
-		//     headers: {
-		//       'Content-Type': 'application/json'
-		//     },
-		//     mode: 'cors',
-		//     body: JSON.stringify(data)
-		//   }
-		// );
-		// setTimeout(() => {
-		//   window.location.reload();
-		// }, 125);
+		const index = e.target.getAttribute('data-index');
+		const id = e.target.getAttribute('data-id');
+		let newComments = this.state.port.posts;
+		newComments.splice(index, 1);
+		const data = { posts: newComments };
+		fetch(
+			'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
+				this.state.port._id,
+			{
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				mode: 'cors',
+				body: JSON.stringify(data)
+			}
+		);
+		setTimeout(() => {
+			window.location.reload();
+		}, 125);
 	};
 
 	componentDidMount() {
