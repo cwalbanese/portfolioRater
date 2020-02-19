@@ -83,7 +83,28 @@ class Portfolio extends React.Component {
 		}, 125);
 	};
 
-	deleteComment = () => {};
+	deleteComment = e => {
+		const index = e.target.getAttribute('data-index');
+		const id = e.target.getAttribute('data-id');
+		let newComments = this.state.port.posts;
+		newComments.splice(index, 1);
+		const data = { posts: newComments };
+		fetch(
+			'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
+				this.state.port._id,
+			{
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				mode: 'cors',
+				body: JSON.stringify(data)
+			}
+		);
+		setTimeout(() => {
+			window.location.reload();
+		}, 125);
+	};
 
 	componentDidMount() {
 		fetch(
@@ -98,8 +119,20 @@ class Portfolio extends React.Component {
 	render() {
 		if (this.state.port !== null) {
 			const { port } = this.state;
-			let comments = port.posts.map(comment => {
-				return <li key={comment}>{comment}</li>;
+			let comments = port.posts.map((comment, index) => {
+				return (
+					<Form>
+						<li key={comment}>{comment}</li>
+						<Button
+							data-id={port._id}
+							data-index={index}
+							onClick={this.deleteComment}
+							className="btn btn-danger"
+						>
+							Delete
+						</Button>
+					</Form>
+				);
 			});
 			return (
 				<div key={port._id} className="portfolio">
