@@ -72,6 +72,7 @@ function Home(props) {
 					<Link to={'/portfolio/' + port._id}>
 						<Button>View/Comment</Button>
 					</Link>
+					{/* test */}
 					<Button
 						onClick={() => like(port._id, port.rating)}
 						className="btn btn-success"
