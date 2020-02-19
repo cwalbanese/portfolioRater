@@ -36,23 +36,27 @@ class App extends React.Component {
         <nav>
           <img src={process.env.PUBLIC_URL + '/logo.jpg'} alt="logo"></img>
           <h2>Portfolio Rater</h2>
-          <Button className="btn btn-primary">
-            <Link className="homeLink" to="/">
-              Home
-            </Link>
-          </Button>
-
-          <Button className="btn btn-secondary">
-            <Link className="createLink" to="/create">
-              Create
-            </Link>
-          </Button>
-
-          <Button className="btn btn-secondary">
-            <Link className="aboutLink" to="/about">
-              About
-            </Link>
-          </Button>
+          <span className="nav-buttons">
+            <Button className="btn btn-primary">
+              <Link className="homeLink" to="/">
+                Home
+              </Link>
+            </Button>
+          </span>
+          <span className="nav-buttons">
+            <Button className="btn btn-secondary">
+              <Link className="createLink" to="/create">
+                Create
+              </Link>
+            </Button>
+          </span>
+          <span className="nav-buttons">
+            <Button className="btn btn-secondary">
+              <Link className="aboutLink" to="/about">
+                About
+              </Link>
+            </Button>
+          </span>
         </nav>
         <main>
           <Switch>

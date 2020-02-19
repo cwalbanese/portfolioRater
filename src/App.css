@@ -66,4 +66,8 @@ footer p {
   nav h2 {
     margin-left: 0px;
   }
+
+  .nav-buttons {
+    margin-right: 10px;
+  }
 }
