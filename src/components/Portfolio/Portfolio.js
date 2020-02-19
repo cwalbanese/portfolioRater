@@ -128,7 +128,7 @@ class Portfolio extends React.Component {
                 data-id={port._id}
                 data-index={index}
                 onClick={this.deleteComment}
-                className="btn btn-danger delete"
+                className="btn btn-secondary"
               >
                 Delete
               </Button>
