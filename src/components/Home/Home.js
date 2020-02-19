@@ -42,12 +42,14 @@ function Home(props) {
           <p>{port.description}</p>
           <ul>{comments}</ul>
         </div>
-        <a target="_blank" href={port.link}>
-          <Button className="btn btn-secondary">Visit portfolio</Button>
-        </a>
-        <Button className="btn btn-success"></Button>
-        <span className="rating">{port.rating}</span>
-        <Button className="btn btn-danger"></Button>
+        <div className="port-buttons">
+          <a target="_blank" rel="noopener noreferrer" href={port.link}>
+            <Button className="btn btn-secondary">Visit portfolio</Button>
+          </a>
+          <Button className="btn btn-success"></Button>
+          <Button className="btn btn-secondary">{port.rating}</Button>
+          <Button className="btn btn-danger"></Button>
+        </div>
       </div>
     );
   });

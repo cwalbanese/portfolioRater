@@ -82,7 +82,7 @@ class App extends React.Component {
           </Switch>
         </main>
         <footer>
-          <p>Made by Chris Albanese, Skyler Bond, and Jarod McGill</p>
+          <p>Created by Chris Albanese, Skyler Bond, and Jarod McGill</p>
         </footer>
       </div>
     );
