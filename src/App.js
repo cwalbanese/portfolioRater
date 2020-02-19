@@ -64,7 +64,9 @@ class App extends React.Component {
             />
             <Route
               path="/portfolio/:id"
-              render={props => <Portfolio match={props.match} />}
+              render={props => (
+                <Portfolio match={props.match} history={props.history} />
+              )}
             />
             <Route
               exact

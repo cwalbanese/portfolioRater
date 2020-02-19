@@ -45,6 +45,11 @@
   font-size: 36px;
 }
 
-.port-buttons {
+.port-button {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.view {
   margin-left: 15px;
 }

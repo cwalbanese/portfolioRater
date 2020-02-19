@@ -5,6 +5,12 @@
   border-radius: 10px;
 }
 
+@media (max-width: 600px) {
+  .portfolio {
+    margin: 200px 25px 25px 25px;
+  }
+}
+
 .content {
   padding: 15px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -14,6 +20,7 @@
 
 .port-buttons {
   display: flex;
+  margin-left: 15px;
 }
 
 .btn-port {
