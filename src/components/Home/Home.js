@@ -87,7 +87,7 @@ class Home extends React.Component {
 		if (this.state.ports) {
 			portElems = this.state.ports.map(port => {
 				let comments = port.posts.map(comment => {
-					return <li key={comment}>{comment}</li>;
+					return <li key={comment.text}>{comment.text}</li>;
 				});
 				return (
 					<div key={port._id} className="portfolio">

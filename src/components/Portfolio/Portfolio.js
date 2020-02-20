@@ -81,7 +81,6 @@ class Portfolio extends React.Component {
 
 	addComment = event => {
 		event.preventDefault();
-		console.log(event.target.comment.value);
 		let newComments = [...this.state.port.posts];
 		newComments.push(event.target.comment.value);
 		let data = { posts: newComments };
@@ -161,8 +160,8 @@ class Portfolio extends React.Component {
 			let comments = port.posts.map((comment, index) => {
 				return (
 					<Form>
-						<li key={comment} className="comments">
-							{comment}&nbsp;&nbsp;&nbsp;
+						<li key={comment.text} className="comments">
+							{comment.text}&nbsp;&nbsp;&nbsp;
 							<Button
 								data-id={port._id}
 								data-index={index}
