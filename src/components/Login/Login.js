@@ -19,31 +19,37 @@ function Login(props) {
 						</Modal.Header>
 
 						<Modal.Body>
-							<Form>
+							<Form onSubmit={props.handleLogin}>
 								<Form.Group>
-									<Form.Label>User name:</Form.Label>
+									<Form.Label id="username" name="username">
+										User name:
+									</Form.Label>
 									<Form.Control
 										type="text"
 										htmlFor="username"
 										id="username"
 										name="username"
 									/>
+									<Button onClick={props.handleHide} variant="secondary">
+										Cancel
+									</Button>
+									<Button
+										onClick={() => {
+											setTimeout(() => {
+												props.handleHide();
+											}, 250);
+										}}
+										id={props.id}
+										type="submit"
+										variant="primary"
+									>
+										Login
+									</Button>
 								</Form.Group>
 							</Form>
 						</Modal.Body>
 
-						<Modal.Footer>
-							<Button onClick={props.handleHide} variant="secondary">
-								Cancel
-							</Button>
-							<Button
-								id={props.id}
-								onClick={props.deletePortfolio}
-								variant="primary"
-							>
-								Login
-							</Button>
-						</Modal.Footer>
+						<Modal.Footer></Modal.Footer>
 					</Modal.Dialog>
 				</Col>
 				<Col></Col>

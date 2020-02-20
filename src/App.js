@@ -15,9 +15,9 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentUser: { username: 'Skyler Bond', _id: '94949868604736600311' },
+			currentUser: null,
+			users: [],
 			selectedPortfolio: {},
-			portfolios: [],
 			show: false
 		};
 	}
@@ -35,6 +35,48 @@ class App extends React.Component {
 		this.setState({
 			show: false
 		});
+	};
+	handleLogin = e => {
+		e.preventDefault();
+		e.persist();
+		let count = 0;
+		fetch('https://portfolio-rater.herokuapp.com/api/users')
+			.then(response => response.json())
+			.then(data => this.setState({ users: data }))
+			.then(() => {
+				for (let i in this.state.users) {
+					if (
+						this.state.users[i].username === e.target.username.value &&
+						count < 1
+					) {
+						this.updateCurrentUser(this.state.users[i]);
+						count++;
+					}
+				}
+				if (count < 1) {
+					this.newUser(e.target.username.value);
+					count++;
+				}
+			})
+			.catch(console.error);
+	};
+	newUser = username => {
+		console.log('creating new');
+		const data = { username };
+		fetch('https://portfolio-rater.herokuapp.com/api/users/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			mode: 'cors',
+			body: JSON.stringify(data)
+		})
+			.then(response => response.json())
+			.then(response =>
+				this.setState({
+					currentUser: response
+				})
+			);
 	};
 
 	render() {
@@ -68,9 +110,13 @@ class App extends React.Component {
 						</Button>
 					</span>
 					<span className="nav-buttons">
-						<Button onClick={this.handleShow} className="btn btn-secondary">
-							Login
-						</Button>
+						{this.state.currentUser === null ? (
+							<Button onClick={this.handleShow} className="btn btn-secondary">
+								Login
+							</Button>
+						) : (
+							<p>User: {this.state.currentUser.username}</p>
+						)}
 					</span>
 				</nav>
 				<main>
