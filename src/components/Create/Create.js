@@ -25,9 +25,9 @@ function Create(props) {
 			mode: 'cors',
 			body: JSON.stringify(data)
 		}).then(
-			setTimeout(response => {
+			setTimeout(() => {
 				props.history.push(`/`);
-			}, 125)
+			}, 200)
 		);
 	}
 

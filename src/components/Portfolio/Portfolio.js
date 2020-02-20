@@ -65,8 +65,11 @@ class Portfolio extends React.Component {
 		}, 125);
 	};
 
-	refresh = id => {
-		fetch('https://portfolio-rater.herokuapp.com/api/portfolios/' + id)
+	refresh = () => {
+		fetch(
+			'https://portfolio-rater.herokuapp.com/api/portfolios/' +
+				this.state.port._id
+		)
 			.then(response => response.json())
 			.then(response => {
 				this.setState({
@@ -95,7 +98,7 @@ class Portfolio extends React.Component {
 			}
 		);
 		setTimeout(() => {
-			window.location.reload();
+			this.refresh();
 		}, 125);
 	};
 
@@ -116,9 +119,9 @@ class Portfolio extends React.Component {
 				mode: 'cors',
 				body: JSON.stringify(data)
 			}
-		);
+		).then(this.handleHide);
 		setTimeout(() => {
-			window.location.reload();
+			this.refresh();
 		}, 125);
 	};
 
@@ -178,6 +181,7 @@ class Portfolio extends React.Component {
 						<ConfirmDelete
 							id={port._id}
 							index={this.state.commentIndex}
+							comment={this.state.port.posts[this.state.commentIndex]}
 							handleShow={this.handleShow}
 							handleHide={this.handleHide}
 							deletePortfolio={this.deletePortfolio}

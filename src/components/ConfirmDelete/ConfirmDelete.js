@@ -7,8 +7,23 @@ function ConfirmDelete(props) {
 	return (
 		<Modal.Dialog>
 			<Modal.Header closeButton>
-				<Modal.Title>Are you sure you want to delete?</Modal.Title>
+				{props.type === 'comment' && (
+					<Modal.Title>
+						Are you sure you want to delete this comment?
+					</Modal.Title>
+				)}
+				{props.type === 'portfolio' && (
+					<Modal.Title>
+						Are you sure you want to delete this portfolio?
+					</Modal.Title>
+				)}
 			</Modal.Header>
+
+			{props.type === 'comment' && (
+				<Modal.Body>
+					<p>"{props.comment}"</p>
+				</Modal.Body>
+			)}
 
 			<Modal.Footer>
 				{props.type === 'portfolio' && (
