@@ -162,8 +162,8 @@ class Portfolio extends React.Component {
 			const { port, show } = this.state;
 			let comments = port.posts.map((comment, index) => {
 				return (
-					<Form>
-						<li key={comment.text} className="comments">
+					<Form key={comment.text}>
+						<li className="comments">
 							{comment.text}&nbsp;&nbsp;&nbsp;
 							<Button
 								data-id={port._id}
