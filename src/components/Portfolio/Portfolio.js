@@ -82,7 +82,10 @@ class Portfolio extends React.Component {
 	addComment = event => {
 		event.preventDefault();
 		let newComments = [...this.state.port.posts];
-		newComments.push(event.target.comment.value);
+		newComments.push({
+			text: event.target.comment.value,
+			userId: this.props.user._id || 'default'
+		});
 		let data = { posts: newComments };
 		fetch(
 			'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
@@ -118,7 +121,7 @@ class Portfolio extends React.Component {
 				mode: 'cors',
 				body: JSON.stringify(data)
 			}
-		).then(this.handleHide);
+		).then(this.handleHide());
 		setTimeout(() => {
 			this.refresh();
 		}, 125);

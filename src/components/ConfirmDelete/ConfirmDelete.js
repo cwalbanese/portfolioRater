@@ -19,9 +19,9 @@ function ConfirmDelete(props) {
 				)}
 			</Modal.Header>
 
-			{props.type === 'comment' && (
+			{props.type === 'comment' && props.comment && (
 				<Modal.Body>
-					<p>"{props.comment}"</p>
+					<p>"{props.comment.text}"</p>
 				</Modal.Body>
 			)}
 
