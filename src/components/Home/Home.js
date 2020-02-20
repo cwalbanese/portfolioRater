@@ -39,8 +39,26 @@ class Home extends React.Component {
 			body: JSON.stringify(data)
 		});
 		setTimeout(() => {
-			window.location.reload();
+			this.refresh(id);
 		}, 125);
+	};
+
+	refresh = id => {
+		let { ports } = this.state;
+		let index;
+		for (var i = 0; i < ports.length; i++) {
+			if (ports[i]._id === id) {
+				index = i;
+			}
+		}
+		fetch('https://portfolio-rater.herokuapp.com/api/portfolios/' + id)
+			.then(response => response.json())
+			.then(response => {
+				let newPorts = [...this.state.ports];
+				newPorts.splice(index, 1, response);
+				this.setState({ ports: newPorts });
+			})
+			.catch(console.error);
 	};
 
 	dislike = (id, oldRating) => {
@@ -55,7 +73,7 @@ class Home extends React.Component {
 			body: JSON.stringify(data)
 		});
 		setTimeout(() => {
-			window.location.reload();
+			this.refresh(id);
 		}, 125);
 	};
 

@@ -45,7 +45,7 @@ class Portfolio extends React.Component {
 			body: JSON.stringify(data)
 		});
 		setTimeout(() => {
-			window.location.reload();
+			this.refresh(id);
 		}, 125);
 	};
 
@@ -61,8 +61,19 @@ class Portfolio extends React.Component {
 			body: JSON.stringify(data)
 		});
 		setTimeout(() => {
-			window.location.reload();
+			this.refresh(id);
 		}, 125);
+	};
+
+	refresh = id => {
+		fetch('https://portfolio-rater.herokuapp.com/api/portfolios/' + id)
+			.then(response => response.json())
+			.then(response => {
+				this.setState({
+					port: response
+				});
+			})
+			.catch(console.error);
 	};
 
 	addComment = event => {
