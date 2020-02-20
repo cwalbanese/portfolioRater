@@ -66,6 +66,8 @@ class App extends React.Component {
 								About
 							</Link>
 						</Button>
+					</span>
+					<span className="nav-buttons">
 						<Button onClick={this.handleShow} className="btn btn-secondary">
 							Login
 						</Button>

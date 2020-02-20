@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function ConfirmDelete(props) {
+function Login(props) {
 	return (
 		<Container className="login">
 			<Row>
@@ -52,4 +52,4 @@ function ConfirmDelete(props) {
 	);
 }
 
-export default ConfirmDelete;
+export default Login;
