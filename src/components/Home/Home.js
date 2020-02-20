@@ -20,11 +20,7 @@ class Home extends React.Component {
 					'Content-Type': 'application/json'
 				}
 			}
-		).then(response =>
-			response.json().then(json => {
-				console.log(json);
-			})
-		);
+		).then(response => response.json());
 	};
 
 	like = (id, oldRating) => {
