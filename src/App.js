@@ -26,6 +26,11 @@ class App extends React.Component {
 			currentUser: user
 		});
 	};
+	logout = () => {
+		this.setState({
+			currentUser: null
+		});
+	};
 	handleShow = () => {
 		this.setState({
 			show: true
@@ -96,11 +101,17 @@ class App extends React.Component {
 						</Button>
 					</span>
 					<span className="nav-buttons">
-						<Button className="btn btn-secondary">
-							<Link className="createLink" to="/create">
-								Create
-							</Link>
-						</Button>
+						{this.state.currentUser === null ? (
+							<Button onClick={this.handleShow} className="btn btn-secondary">
+								<a className="createLink">Create</a>
+							</Button>
+						) : (
+							<Button className="btn btn-secondary">
+								<Link className="createLink" to="/create">
+									Create
+								</Link>
+							</Button>
+						)}
 					</span>
 					<span className="nav-buttons">
 						<Button className="btn btn-secondary">
@@ -115,7 +126,12 @@ class App extends React.Component {
 								Login
 							</Button>
 						) : (
-							<p>User: {this.state.currentUser.username}</p>
+							<div>
+								<Button onClick={this.logout} className="btn btn-secondary">
+									Logout
+								</Button>
+								<p>User: {this.state.currentUser.username}</p>
+							</div>
 						)}
 					</span>
 				</nav>
@@ -123,7 +139,9 @@ class App extends React.Component {
 					<Switch>
 						<Route
 							path="/create"
-							render={props => <Create history={props.history} />}
+							render={props => (
+								<Create user={this.state.currentUser} history={props.history} />
+							)}
 						/>
 						<Route path="/about" render={() => <About />} />
 						<Route
@@ -136,6 +154,7 @@ class App extends React.Component {
 							path="/portfolio/:id"
 							render={props => (
 								<Portfolio
+									handleShowLogin={this.handleShow}
 									user={this.state.currentUser}
 									match={props.match}
 									history={props.history}

@@ -81,27 +81,31 @@ class Portfolio extends React.Component {
 
 	addComment = event => {
 		event.preventDefault();
-		let newComments = [...this.state.port.posts];
-		newComments.push({
-			text: event.target.comment.value,
-			userId: this.props.user._id || 'default'
-		});
-		let data = { posts: newComments };
-		fetch(
-			'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
-				this.state.port._id,
-			{
-				method: 'PUT',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				mode: 'cors',
-				body: JSON.stringify(data)
-			}
-		);
-		setTimeout(() => {
-			this.refresh();
-		}, 125);
+		if (this.props.user) {
+			let newComments = [...this.state.port.posts];
+			newComments.push({
+				text: event.target.comment.value,
+				userId: this.props.user._id || 'default'
+			});
+			let data = { posts: newComments };
+			fetch(
+				'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
+					this.state.port._id,
+				{
+					method: 'PUT',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					mode: 'cors',
+					body: JSON.stringify(data)
+				}
+			);
+			setTimeout(() => {
+				this.refresh();
+			}, 125);
+		} else {
+			this.props.handleShowLogin();
+		}
 	};
 
 	deleteComment = e => {
@@ -157,25 +161,28 @@ class Portfolio extends React.Component {
 	};
 
 	render() {
-		let index;
 		if (this.state.port !== null) {
 			const { port, show } = this.state;
 			let comments = port.posts.map((comment, index) => {
-				return (
-					<Form key={comment.text}>
-						<li className="comments">
-							{comment.text}&nbsp;&nbsp;&nbsp;
-							<Button
-								data-id={port._id}
-								data-index={index}
-								onClick={this.handleShow}
-								className="btn btn-secondary"
-							>
-								Delete
-							</Button>
-						</li>
-					</Form>
-				);
+				if (this.props.user && this.props.user._id === comment.userId) {
+					return (
+						<Form key={comment.text}>
+							<li className="comments">
+								{comment.text}&nbsp;&nbsp;&nbsp;
+								<Button
+									data-id={port._id}
+									data-index={index}
+									onClick={this.handleShow}
+									className="btn btn-secondary"
+								>
+									Delete
+								</Button>
+							</li>
+						</Form>
+					);
+				} else {
+					return <li className="comments">{comment.text}</li>;
+				}
 			});
 			return (
 				<div key={port._id} className="portfolio">
@@ -229,7 +236,7 @@ class Portfolio extends React.Component {
 							Visit portfolio
 						</Button>
 
-						{this.props.user._id === port.userId && (
+						{this.props.user && this.props.user._id === port.userId && (
 							<div>
 								<Link to={'/update/' + port._id}>
 									<Button id={port._id} className="btn btn-secondary btn-port">

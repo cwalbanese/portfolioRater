@@ -15,7 +15,8 @@ function Create(props) {
 			imageUrl: imageUrl.value,
 			title: title.value,
 			link: link.value,
-			description: description.value
+			description: description.value,
+			userId: props.user._id
 		};
 		fetch('https://portfolio-rater.herokuapp.com/api/portfolios/', {
 			method: 'POST',
