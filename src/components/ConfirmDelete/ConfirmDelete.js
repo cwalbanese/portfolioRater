@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button';
 
 function ConfirmDelete(props) {
 	return (
-		<Modal.Dialog>
-			<Modal.Header closeButton>
+		<Modal.Dialog className="modal-fade">
+			<Modal.Header>
 				{props.type === 'comment' && (
 					<Modal.Title>
 						Are you sure you want to delete this comment?

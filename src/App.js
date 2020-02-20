@@ -6,6 +6,8 @@ import Create from './components/Create/Create';
 import About from './components/About/About';
 import Home from './components/Home/Home';
 import Update from './components/Update/Update';
+import Login from './components/Login/Login';
+
 import Portfolio from './components/Portfolio/Portfolio';
 import Button from 'react-bootstrap/Button';
 
@@ -13,9 +15,10 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentUser: {},
+			currentUser: { username: 'Skyler Bond', _id: '94949868604736600311' },
 			selectedPortfolio: {},
-			portfolios: []
+			portfolios: [],
+			show: false
 		};
 	}
 	updateCurrentUser = user => {
@@ -23,10 +26,23 @@ class App extends React.Component {
 			currentUser: user
 		});
 	};
+	handleShow = () => {
+		this.setState({
+			show: true
+		});
+	};
+	handleHide = () => {
+		this.setState({
+			show: false
+		});
+	};
 
 	render() {
 		return (
 			<div className="App">
+				{this.state.show && (
+					<Login handleLogin={this.handleLogin} handleHide={this.handleHide} />
+				)}
 				<nav>
 					<img src={process.env.PUBLIC_URL + '/logo.jpg'} alt="logo"></img>
 					<h2>Portfolio Rater</h2>
@@ -49,6 +65,9 @@ class App extends React.Component {
 							<Link className="aboutLink" to="/about">
 								About
 							</Link>
+						</Button>
+						<Button onClick={this.handleShow} className="btn btn-secondary">
+							Login
 						</Button>
 					</span>
 				</nav>

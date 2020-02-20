@@ -1,73 +1,77 @@
 body {
-  background-color: #2069d9;
-  color: black;
+	background-color: #2069d9;
+	color: black;
 }
 nav {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  align-items: center;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  color: white;
-  z-index: 1;
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+	align-items: center;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: white;
+	z-index: 1;
+}
+.login .modal-dialog {
+	position: fixed;
+	align-content: center;
 }
 
 nav img {
-  width: 50px;
+	width: 50px;
 }
 
 nav h2 {
-  font-family: 'Russo One', sans-serif;
-  font-size: 36px;
-  margin-top: 10px;
-  margin-left: -25px;
+	font-family: 'Russo One', sans-serif;
+	font-size: 36px;
+	margin-top: 10px;
+	margin-left: -25px;
 }
 
 .aboutLink {
-  color: white;
+	color: white;
 }
 .createLink {
-  color: white;
+	color: white;
 }
 .homeLink {
-  color: white;
+	color: white;
 }
 img {
-  width: 100%;
+	width: 100%;
 }
 
 main {
-  margin-top: 100px;
-  margin-bottom: 100px;
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
 footer {
-  color: white;
-  background-color: black;
-  width: 100%;
-  height: 80px;
-  position: fixed;
-  bottom: 0;
+	color: white;
+	background-color: black;
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	bottom: 0;
 }
 
 footer p {
-  text-align: center;
-  padding: 25px 0px 0px 0px;
+	text-align: center;
+	padding: 25px 0px 0px 0px;
 }
 
 @media (max-width: 600px) {
-  nav {
-    display: block;
-  }
+	nav {
+		display: block;
+	}
 
-  nav h2 {
-    margin-left: 0px;
-  }
+	nav h2 {
+		margin-left: 0px;
+	}
 
-  .nav-buttons {
-    margin-right: 10px;
-  }
+	.nav-buttons {
+		margin-right: 10px;
+	}
 }

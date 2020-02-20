@@ -229,7 +229,7 @@ class Portfolio extends React.Component {
 							Visit portfolio
 						</Button>
 
-						{true && (
+						{this.props.user._id === port.userId && (
 							<div>
 								<Link to={'/update/' + port._id}>
 									<Button id={port._id} className="btn btn-secondary btn-port">
