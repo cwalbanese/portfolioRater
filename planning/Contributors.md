@@ -7,7 +7,7 @@ Front-end:
 - pair programming navigator
 - planning directory
 
-  Back-end:
+Back-end:
 
 - created
 
@@ -33,7 +33,7 @@ Front-end:
 - tests
 - readme
 
-  Back-end:
+Back-end:
 
 - tests
 - readme
