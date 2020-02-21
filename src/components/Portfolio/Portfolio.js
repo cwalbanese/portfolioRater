@@ -166,7 +166,7 @@ class Portfolio extends React.Component {
 			let comments = port.posts.map((comment, index) => {
 				if (this.props.user && this.props.user._id === comment.userId) {
 					return (
-						<Form key={comment.text}>
+						<Form key={comment.text + comment.userId}>
 							<li className="comments">
 								{comment.text}&nbsp;&nbsp;&nbsp;
 								<Button
@@ -181,7 +181,11 @@ class Portfolio extends React.Component {
 						</Form>
 					);
 				} else {
-					return <li className="comments">{comment.text}</li>;
+					return (
+						<li key={comment.text + comment.userId} className="comments">
+							{comment.text}
+						</li>
+					);
 				}
 			});
 			return (
