@@ -67,6 +67,10 @@ footer p {
     display: block;
   }
 
+  nav img {
+    display: none;
+  }
+
   nav h2 {
     margin-left: 0px;
   }

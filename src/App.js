@@ -120,19 +120,20 @@ class App extends React.Component {
               </Link>
             </Button>
           </span>
-          <span className="nav-buttons">
-            {this.state.currentUser === null ? (
+
+          {this.state.currentUser === null ? (
+            <span className="nav-buttons">
               <Button onClick={this.handleShow} className="btn btn-secondary">
                 Login
               </Button>
-            ) : (
-              <div>
-                <Button onClick={this.logout} className="btn btn-secondary">
-                  Logout
-                </Button>
-              </div>
-            )}
-          </span>
+            </span>
+          ) : (
+            <span className="nav-buttons">
+              <Button onClick={this.logout} className="btn btn-secondary">
+                Logout
+              </Button>
+            </span>
+          )}
         </nav>
         <main>
           <Switch>

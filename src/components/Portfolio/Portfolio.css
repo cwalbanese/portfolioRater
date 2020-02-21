@@ -5,9 +5,12 @@
   border-radius: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 775px) {
   .portfolio {
-    margin: 100px 25px 25px 25px;
+    margin: 50px 25px 25px 25px;
+  }
+  .single {
+    margin: 150px 25px 25px 25px;
   }
 }
 
