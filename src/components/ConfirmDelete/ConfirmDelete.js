@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
@@ -45,7 +44,11 @@ function ConfirmDelete(props) {
 						Delete
 					</Button>
 				)}
-				<Button onClick={props.handleHide} variant="secondary">
+				<Button
+					className="cancelBtn"
+					onClick={props.handleHide}
+					variant="secondary"
+				>
 					Cancel
 				</Button>
 			</Modal.Footer>

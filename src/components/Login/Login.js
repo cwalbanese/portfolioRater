@@ -25,12 +25,17 @@ function Login(props) {
 										User name:
 									</Form.Label>
 									<Form.Control
+										className="loginInput"
 										type="text"
 										htmlFor="username"
 										id="username"
 										name="username"
 									/>
-									<Button onClick={props.handleHide} variant="secondary">
+									<Button
+										className="cancelBtn"
+										onClick={props.handleHide}
+										variant="secondary"
+									>
 										Cancel
 									</Button>
 									<Button
@@ -42,6 +47,7 @@ function Login(props) {
 										id={props.id}
 										type="submit"
 										variant="primary"
+										className="loginBtn"
 									>
 										Login
 									</Button>
