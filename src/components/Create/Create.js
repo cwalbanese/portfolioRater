@@ -7,82 +7,82 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function Create(props) {
-	function postNewPortfolio(e) {
-		e.preventDefault();
-		const { name, imageUrl, title, link, description } = e.target;
-		let data = {
-			name: name.value,
-			imageUrl: imageUrl.value,
-			title: title.value,
-			link: link.value,
-			description: description.value,
-			userId: props.user._id
-		};
-		fetch('https://portfolio-rater.herokuapp.com/api/portfolios/', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			mode: 'cors',
-			body: JSON.stringify(data)
-		}).then(
-			setTimeout(() => {
-				props.history.push(`/`);
-			}, 200)
-		);
-	}
+  function postNewPortfolio(e) {
+    e.preventDefault();
+    const { name, imageUrl, title, link, description } = e.target;
+    let data = {
+      name: name.value,
+      imageUrl: imageUrl.value,
+      title: title.value,
+      link: link.value,
+      description: description.value,
+      userId: props.user._id
+    };
+    fetch('https://portfolio-rater.herokuapp.com/api/portfolios/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors',
+      body: JSON.stringify(data)
+    }).then(
+      setTimeout(() => {
+        props.history.push(`/`);
+      }, 200)
+    );
+  }
 
-	return (
-		<div className="Create">
-			<Container fluid="true">
-				<Row>
-					<Col>
-						<h2>Post your portfolio.</h2>
-					</Col>
-					<Col>
-						<div className="form">
-							<Form onSubmit={postNewPortfolio}>
-								<Form.Row>
-									<Form.Group>
-										<Form.Label htmlFor="name">Name: </Form.Label>
-										<Form.Control type="text" id="name" name="name" />
-									</Form.Group>
-									<Form.Group>
-										<Form.Label htmlFor="imageUrl">Image URL: </Form.Label>
-										<Form.Control type="text" id="imageUrl" name="imageUrl" />
-									</Form.Group>
+  return (
+    <div className="Create">
+      <Container fluid="true">
+        <Row>
+          <Col>
+            <h2>Post your portfolio.</h2>
+          </Col>
+          <Col>
+            <div className="form">
+              <Form onSubmit={postNewPortfolio}>
+                <Form.Row>
+                  <Form.Group>
+                    <Form.Label htmlFor="name">Name: </Form.Label>
+                    <Form.Control type="text" id="name" name="name" />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label htmlFor="imageUrl">Screenshot URL: </Form.Label>
+                    <Form.Control type="text" id="imageUrl" name="imageUrl" />
+                  </Form.Group>
 
-									<Form.Group>
-										<Form.Label htmlFor="title">Title: </Form.Label>
-										<Form.Control type="text" id="title" name="title" />
-									</Form.Group>
-								</Form.Row>
-								<Form.Row>
-									<Form.Group>
-										<Form.Label htmlFor="link">Portfolio link: </Form.Label>
-										<Form.Control type="text" id="link" name="link" />
-									</Form.Group>
-									<Form.Group>
-										<Form.Label htmlFor="description">Description: </Form.Label>
-										<Form.Control
-											type="text"
-											id="description"
-											name="description"
-											className="description"
-										/>
-										<br />
-										<Button className="btn btn-secondary" type="submit">
-											Submit
-										</Button>
-									</Form.Group>
-								</Form.Row>
-							</Form>
-						</div>
-					</Col>
-				</Row>
-			</Container>
-		</div>
-	);
+                  <Form.Group>
+                    <Form.Label htmlFor="title">Title: </Form.Label>
+                    <Form.Control type="text" id="title" name="title" />
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group>
+                    <Form.Label htmlFor="link">Portfolio link: </Form.Label>
+                    <Form.Control type="text" id="link" name="link" />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label htmlFor="description">Description: </Form.Label>
+                    <Form.Control
+                      type="text"
+                      id="description"
+                      name="description"
+                      className="description"
+                    />
+                    <br />
+                    <Button className="btn btn-secondary" type="submit">
+                      Submit
+                    </Button>
+                  </Form.Group>
+                </Form.Row>
+              </Form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }
 
 export default Create;
