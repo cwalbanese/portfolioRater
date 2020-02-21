@@ -11,7 +11,6 @@ class Home extends React.Component {
 		};
 	}
 	deletePortfolio = e => {
-		console.log(e.target.id);
 		fetch(
 			`https://portfolio-rater.herokuapp.com/api/portfolios/delete/${e.target.id}`,
 			{

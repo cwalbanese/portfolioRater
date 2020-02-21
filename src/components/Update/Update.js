@@ -26,7 +26,6 @@ class Update extends React.Component {
 				link: link.value || portfolio.link,
 				description: description.value || portfolio.description
 			};
-			console.log(this.state.portfolio);
 			fetch(
 				'https://portfolio-rater.herokuapp.com/api/portfolios/update/' +
 					portfolio._id,
@@ -55,7 +54,6 @@ class Update extends React.Component {
 			.catch(console.error);
 	}
 	render() {
-		// console.log(this.state.portfolio);
 		if (this.state.portfolio) {
 			var { name, title, description, link, imageUrl } = this.state.portfolio;
 		}
