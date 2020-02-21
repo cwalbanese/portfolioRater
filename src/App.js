@@ -102,7 +102,7 @@ class App extends React.Component {
 					<span className="nav-buttons">
 						{this.state.currentUser === null ? (
 							<Button onClick={this.handleShow} className="btn btn-secondary">
-								<a className="createLink">Create</a>
+								Create
 							</Button>
 						) : (
 							<Button className="btn btn-secondary">
