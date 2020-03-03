@@ -128,7 +128,7 @@ class Home extends React.Component {
 		if (portElems) {
 			return <div className="main">{portElems}</div>;
 		} else {
-			return <h1>No portfolios found?</h1>;
+			return <h1>Loading...</h1>;
 		}
 	}
 }

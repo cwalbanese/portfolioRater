@@ -258,7 +258,7 @@ class Portfolio extends React.Component {
 				</div>
 			);
 		} else {
-			return <h1>Portfolio not found?</h1>;
+			return <h1>Loading...</h1>;
 		}
 	}
 }
