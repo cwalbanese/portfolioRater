@@ -1,6 +1,6 @@
 ## Portfolio Rater
 
-![PortfolioRater](https://user-images.githubusercontent.com/58185036/74901569-78fc7c00-5360-11ea-9c25-fea64a1c9ada.png)
+![PortfolioRater](https://www.chrisalbanese.com/images/preview3.png)
 
 #### About the Project
 
@@ -9,22 +9,27 @@ This application is named Portfolio Rater. It is a way for users to receive feed
 This was a Collaborative between Skyler Bond, Chris Albanese and Jarod McGill
 
 #### User Stories
-* As a user, I would like to view other portfolios 
-* As a user, I would like to see and post comments on portfolios
-* As a user, I would like to login/create a new user
-* As a user, I would like to upload a portfolio including a link and image URL
-* As a user, I would like to be able to update and delete portfolios that I’ve posted
-* As a user, I would like to see how many upvotes my portfolio has received
 
-#### Built With 
-* React
-* React Router
-* Bootstrap
+- As a user, I would like to view other portfolios
+- As a user, I would like to see and post comments on portfolios
+- As a user, I would like to login/create a new user
+- As a user, I would like to upload a portfolio including a link and image URL
+- As a user, I would like to be able to update and delete portfolios that I’ve posted
+- As a user, I would like to see how many upvotes my portfolio has received
+
+#### Built With
+
+- React
+- React Router
+- Bootstrap
+
 ##### Tested With
-* Jest
-* Enzyme
+
+- Jest
+- Enzyme
 
 #### Getting Started
+
 Follow the link to the hosted app on Heroku, or
 
 Fork and clone the repository, then run npm install and npm start in the root directory
@@ -32,6 +37,7 @@ Fork and clone the repository, then run npm install and npm start in the root di
 Refer to screenshots above to see how the app should appear.
 
 #### Contributing
+
 1. Fork the Project
 2. Create your Feature Branch
 3. Commit your Changes
