@@ -90,8 +90,10 @@ class App extends React.Component {
           <Login handleLogin={this.handleLogin} handleHide={this.handleHide} />
         )}
         <nav>
-          <img src={process.env.PUBLIC_URL + '/logo.jpg'} alt="logo"></img>
-          <h2>Portfolio Rater</h2>
+          <h2>
+            <img src={process.env.PUBLIC_URL + '/logo.jpg'} alt="logo"></img>
+            <span className="title">Portfolio Rater</span>
+          </h2>
           <span className="nav-buttons">
             <Button className="btn btn-secondary">
               <Link className="homeLink" to="/">

@@ -30,14 +30,20 @@ nav h2 {
   margin-left: -25px;
 }
 
+.title {
+  margin-left: 10px;
+  color: #7ccdf4;
+}
+
 .createLink,
 .homeLink,
 .aboutLink {
   color: white;
 }
 
-.aboutLink:hover,
-.homeLink:hover {
+.createLink:hover,
+.homeLink:hover,
+.aboutLink:hover {
   color: white;
   text-decoration: none;
 }
@@ -57,9 +63,9 @@ main {
     display: block;
   }
 
-  nav img {
+  /* nav img {
     display: none;
-  }
+  } */
 
   nav h2 {
     margin-left: 0px;
